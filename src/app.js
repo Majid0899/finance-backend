@@ -2,9 +2,12 @@ import express from 'express'
 import dotenv from 'dotenv'
 dotenv.config()
 
-
+import connectDB from './config/database.js'
 
 const app=express()
+
+// ─── Connect to Database ───────────────────────────────────────────
+connectDB();
 
 app.get("/",(req,res)=>{
     res.send("Welcome to Finance Backend API")
