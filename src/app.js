@@ -12,6 +12,10 @@ import { swaggerSpec } from './config/swagger.js'
 // Route import 
 import userRoutes from './routes/userRoute.js'
 import authRoutes from './routes/authRoute.js'
+import recordRoutes from './routes/recordRoutes.js'
+import dashboardRoutes from './routes/dashboardRoute.js'
+
+
 const app=express()
 
 // ─── Global Middlewares ────────────────────────────────────────────
@@ -51,6 +55,8 @@ app.get('/api/docs.json', (req, res) => {
 // ─── Routes ───────────────────────────────────────────────────────
 app.use('/api/auth',authRoutes);
 app.use('/api/users',userRoutes);
+app.use('/api/records',recordRoutes);
+app.use('/api/dashboard',dashboardRoutes);
 
 
 // ─── Health Check ─────────────────────────────────────────────────
